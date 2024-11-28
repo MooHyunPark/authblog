@@ -10,15 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class UserController {
     private final UserService userService;
-    private final HttpSession session;
 
 
+    @PostMapping("/join")
+    public String join(UserRequest.JoinDTO joinDTO) {
+        userService.회원가입(joinDTO);
 
-    @PostMapping("/login")
-    public String login(UserRequest.LoginDTO loginDTO) {
-        User sessionUser = userService.로그인(loginDTO);
-        session.setAttribute("sessionUser", sessionUser);
-        return "redirect:/";
+        return "redirect:/login-form";
     }
 
     @GetMapping("login-form")

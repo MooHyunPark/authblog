@@ -5,10 +5,10 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class FilterConfig {
 
-    @Bean // 리턴값이 IoC에 등록됨
+    //@Bean // 리턴값이 IoC에 등록됨
     public FilterRegistrationBean addAuthFilter() {
         FilterRegistrationBean rg = new FilterRegistrationBean();
         rg.setFilter(new AuthenticationFilter());
