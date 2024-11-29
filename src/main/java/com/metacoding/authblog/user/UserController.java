@@ -19,7 +19,7 @@ public class UserController {
         return "redirect:/login-form";
     }
 
-    @GetMapping("login-form")
+    @GetMapping("/s/login-form")
     public String login() {
         return "user/login-form";
     }

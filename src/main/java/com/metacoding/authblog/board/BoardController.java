@@ -12,13 +12,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class BoardController {
 
     @GetMapping("/")
-    public String index(@AuthenticationPrincipal User user) {
-        System.out.println(user.getUsername());
+    public String index() {
         return "index";
     }
 
     @GetMapping("/board/save-form")
-    public String saveForm() {
+    public String saveForm(@AuthenticationPrincipal User user) {
         return "board/save-form";
     }
 
